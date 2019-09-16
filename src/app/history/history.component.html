@@ -1,0 +1,24 @@
+<table>
+    <thead>
+        <tr>
+            <td>№</td>
+            <td>Карта платильщика</td>
+            <td>Карта получателя</td>
+            <td>Сумма</td>
+            <td>Дата выполнения</td>
+            <td>Действие</td>
+        </tr>
+    </thead>
+    <tr *ngFor="let item of DataItems">
+        <td>{{item.TransferNumber}}</td>
+        <td>{{item.CardNumber}}</td>
+        <td>{{item.RecipCardNumber}}</td>
+        <td>{{item.Amount}} </td>
+        <td>{{item.TransferDate}}</td>
+        <td>
+            <button (click)="repeat(item)">ПОВТОРИТЬ</button>
+            <button (click)="delete(item)">УДАЛИТЬ</button>
+        </td>
+    </tr>
+</table>
+<!-- <button (click)="lsRemoteData()">УДАЛИТЬ ИЗ LOCALSTORAGE</button> -->

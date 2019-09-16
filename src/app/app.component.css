@@ -1,0 +1,18 @@
+div{
+    background-color: #f3f3f3;
+}
+.active-class {
+  color: red;
+}
+h1{
+  text-align: center;
+}
+.tabs{
+  text-align: center;
+}
+.tabs a{
+  margin: 0 10px 0 0;
+}
+.tabs a:last-child{
+  margin: 0 0 0 0;
+}

@@ -1,0 +1,154 @@
+h1{
+    font-size: 21px;
+    text-align: center;
+}
+
+/* .upperCase{
+    text-transform: uppercase;
+} */
+/* .cards{
+    position: relative;
+    align-items: center;
+    width: 100%;
+} */
+
+.P2PForm{
+    position: absolute;
+    height:100%;
+}
+.cards{
+    position: relative;
+    width: 100%;
+    margin-left: 20%;
+}
+.tranferfield{
+    position: relative;
+    float: left;
+    margin: 20px 0 0 0;
+    width: 100%;
+}
+.payerCardForm{
+    /* position: relative; */
+    float: left;
+    width: 350px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 50px 50px 0px 0px;
+}
+
+.recipCardForm{
+    /* position: relative; */
+    float: left;
+    width: 350px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 50px 50px 0px 0px;
+}
+input, select{
+    border-color: #2dbdb6;
+}
+.recipCardForm input{
+    border-radius: 4px;
+
+}
+.number{
+    width: 100%;
+}
+.number .fieldName{
+    margin: 0 10px;
+    width: 100%;
+}
+.number .fieldInput{
+    width: 100%;
+}
+.number input{
+    /* width: 70px; */
+    width: 70%;
+    height: 25px;
+    font-size: 21px;
+    margin: 0 5px;
+}
+
+.FIO{
+    position: relative;
+    float: left;
+    width: calc(60% - 10px); 
+    margin: 30px 5px 0 0;   
+}
+
+.FIO .fieldName{
+    margin: 0 10px;
+    width: 100%;
+}
+.FIO .fieldInput{
+    width: calc(100% - 10px);
+}
+.FIO input{
+    width: 100%;
+    margin: 0 5px;
+}
+.activeTo{
+    position: relative;
+    float: left;
+    width: 40%;
+    margin: 30px 0 0 0;
+}
+.activeTo .fieldName{
+    margin: 0 5px;
+}
+.activeTo .fieldInput{
+    width: calc(100% - 10px);
+}
+
+.activeTo select{
+    width: 40%;
+    margin: 0 5px 0 0;
+}
+
+.payerCardForm input, select{
+    border-radius: 4px;
+}
+
+.number{
+    width: 100%;
+    margin: 40px 0 0 0;
+}
+
+.transferField{
+    position: relative;
+    float: left;
+    margin-left: 50%;
+    margin-top: 10px;
+    text-align: center;
+}
+.transferField input{
+    border-radius: 4px;
+    width: 200px;
+    margin: 0 5px;
+    font-size: 21px;
+    height: 20px;
+}
+
+/* Validators styles */
+input.ng-touched.ng-invalid, 
+select.ng-touched.ng-invalid {
+    border:solid red 2px;
+}
+input.ng-touched.ng-valid, 
+select.ng-touched.ng-valid {
+     border:solid green 2px;
+}
+/* УБРАТЬ СТРЕЛКИ ИЗ input[type="number"*/
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+button{
+    font-size: 20px;
+}
