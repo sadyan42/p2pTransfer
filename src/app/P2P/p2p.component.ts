@@ -33,6 +33,8 @@ export class P2PComponent implements OnInit {
   });
 
   constructor(protected p2pService: P2PService, private _activatedRoute: ActivatedRoute) {
+
+
     _activatedRoute.queryParams.subscribe(params => {
       const id: string = params['id'];
       const item = this.p2pService.getDataById(parseInt(id))
