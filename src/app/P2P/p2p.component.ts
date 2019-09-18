@@ -44,8 +44,7 @@ export class P2PComponent implements OnInit {
   }
 
   ngOnInit() {
-    // console.log(this.P2PForm.controls.cardNumber);
-    // CardNumberDirective.formatStatic("");
+
   }
 
   public date = new Date();
@@ -55,7 +54,6 @@ export class P2PComponent implements OnInit {
 
   public submit() {
     const dto = {
-      // transferNumber: this.localStorageService.lastTransferNumber,
       cardNumber: this.P2PForm.controls.cardNumber.value,
       fio: this.P2PForm.controls.payerName.value,
       activeToYear: this.P2PForm.controls.payerActiveToYear.value,

@@ -7,9 +7,6 @@ import { FormControl } from '@angular/forms';
 
 export class CardNumberDirective {
 
-    // public static formatStatic(value: string) {
-    //     return value;
-    // }
 
     private _control: FormControl;
 
@@ -24,12 +21,10 @@ export class CardNumberDirective {
         }
         this._control = control;
         this.control.valueChanges.subscribe((val: string) => {
-            // let element = this.elementRef.nativeElement;
             let res = this.formatNumber(val);
             if (res && res.length > 19) {
                 res = res.slice(0, 19);
             };
-            // this.elementRef.nativeElement.value = res;
             this.control.setValue(res, { emitEvent: false });
         })
     }
@@ -54,11 +49,4 @@ export class CardNumberDirective {
         }
     }
 
-    // @HostListener('keypress', ['$event']) onKeypress(event: KeyboardEvent) {
-
-    // }
-
-    // @HostListener('change') ngOnChanges() {
-
-    // }
 }

@@ -8,15 +8,19 @@ export class P2PService {
 
     public getDataById(id: number): TransferModel {
         const items = this.getData();
-        return items.find(i => i.TransferNumber === id);
+        if (items != undefined) {
+            return items.find(i => i.TransferNumber === id);
+        }
     }
 
     public getData(): TransferModel[] {
         const items: ITransfer[] = JSON.parse(localStorage.getItem("cardArray"));
-        const models = items.map(i => {
-            return new TransferModel(i);
-        });
-        return models;
+        if (items != null) {
+            const models = items.map(i => {
+                return new TransferModel(i);
+            });
+            return models;
+        }
     }
 
     public addData(cardNumber: string, payerName: string, activeToYear: number, activeToMonth: number, recipCardNumber: string, amount: number, transferDate: string) {
@@ -31,7 +35,8 @@ export class P2PService {
 
         const dataItem: ITransfer = { transferNumber: TransferNumber, cardNumber: cardNumber, payerName: payerName, activeToYear: activeToYear, activeToMonth: activeToMonth, recipCardNumber: recipCardNumber, amount: amount, transferDate: transferDate };
         const dataArray = this.getData() || [];
-        const data = dataArray.map(i => i.toDto()).push(dataItem);
+        const data = dataArray.map(i => i.toDto());
+        data.push(dataItem);
         localStorage.setItem("cardArray", JSON.stringify(data));
     }
 
@@ -39,12 +44,7 @@ export class P2PService {
     public remoteData(index: number) {
         let replaceDataArray = JSON.parse(localStorage.cardArray)
 
-        replaceDataArray.splice(index, 1) //cделать как-то не по индексу, а по элементу "transferNumber"
+        replaceDataArray.splice(index, 1)
         localStorage.setItem("cardArray", JSON.stringify(replaceDataArray));
-
-        // if (replaceDataArray.findIndex(item => item.transferNumber === transferNumber) != -1) {
-        //     replaceDataArray.splice(replaceDataArray.findIndex(item => item.transferNumber === transferNumber), 1);
-        //     localStorage.setItem("cardArray", JSON.stringify(replaceDataArray));
-        // }
     }
 }

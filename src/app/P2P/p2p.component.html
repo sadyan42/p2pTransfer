@@ -1,27 +1,25 @@
 <form class="P2PForm" [formGroup]="P2PForm" novalidate>
-  <div class="cards">
-    <div class="payerCardForm">
-      <h1>карта платильщика</h1>
-      <div class="number">
-        <div class="fieldName">номер</div>
-        <div class="fieldInput" *ngIf="P2PForm?.controls?.cardNumber">
-          <input cardNumber [control]="P2PForm.controls.cardNumber" type="tel" placeholder="0000 0000 00000 0000"
-            name="CardNumber" formControlName="cardNumber" inputmode="numeric" cardNumber minlength="19">
-        </div>
-      </div>
-      <div class="FIO">
-        <div class="fieldName">ФИО держателя</div>
-        <div class="fieldInput">
-          <input upperCase [control]="P2PForm.controls.payerName" type="text" placeholder="IVAN IVANOV" name="payerName"
-            formControlName="payerName">
-        </div>
-      </div>
-      <div class="activeTo">
-        <div class="fieldName">
-          активна до
-        </div>
-        <div class="fieldInput">
-          <select name="activeToMonth" formControlName="payerActiveToMonth">
+    <div class="cards">
+        <div class="payerCardForm">
+            <h1>карта платильщика</h1>
+            <div class="number">
+                <div class="fieldName">номер</div>
+                <div class="fieldInput" *ngIf="P2PForm?.controls?.cardNumber">
+                    <input cardNumber [control]="P2PForm.controls.cardNumber" type="tel" placeholder="0000 0000 00000 0000" name="CardNumber" formControlName="cardNumber" inputmode="numeric" cardNumber minlength="19">
+                </div>
+            </div>
+            <div class="FIO">
+                <div class="fieldName">ФИО держателя</div>
+                <div class="fieldInput">
+                    <input upperCase [control]="P2PForm.controls.payerName" type="text" placeholder="IVAN IVANOV" name="payerName" formControlName="payerName">
+                </div>
+            </div>
+            <div class="activeTo">
+                <div class="fieldName">
+                    активна до
+                </div>
+                <div class="fieldInput">
+                    <select name="activeToMonth" formControlName="payerActiveToMonth">
             <option>01</option>
             <option>02</option>
             <option>03</option>
@@ -35,7 +33,7 @@
             <option>11</option>
             <option>12</option>
           </select>
-          <select name="activeToYear" formControlName="payerActiveToYear">
+                    <select name="activeToYear" formControlName="payerActiveToYear">
             <option>19</option>
             <option>20</option>
             <option>21</option>
@@ -48,24 +46,23 @@
             <option>28</option>
             <option>29</option>
           </select>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="recipCardForm">
+            <h1>карта получателя</h1>
+            <div class="number">
+                <div class="fieldName">
+                    номер
+                </div>
+                <div class="fieldInput">
+                    <input type="tel" placeholder="0000 0000 00000 0000" name="recipCardNumber" formControlName="recipCardNumber" cardNumber [control]="P2PForm.controls.recipCardNumber" minlength="19">
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="recipCardForm">
-      <h1>карта получателя</h1>
-      <div class="number">
-        <div class="fieldName">
-          номер
-        </div>
-        <div class="fieldInput">
-          <input type="tel" placeholder="0000 0000 00000 0000" name="recipCardNumber" formControlName="recipCardNumber"
-            cardNumber [control]="P2PForm.controls.recipCardNumber" minlength="19">
-        </div>
-      </div>
+    <div class="transferField">
+        <input type="number" placeholder="СУММА" name="amount" formControlName="amount">
+        <button [disabled]="P2PForm.invalid" (click)="submit()">ПЕРЕВЕСТИ</button>
     </div>
-  </div>
-  <div class="transferField">
-    <input type="number" placeholder="СУММА" name="amount" formControlName="amount">
-    <button [disabled]="P2PForm.invalid" (click)="submit()">ПЕРЕВЕСТИ</button>
-  </div>
 </form>

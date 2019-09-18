@@ -7,6 +7,7 @@ export class TransferModel {
     public RecipCardNumber: string
     public Amount: number
     public TransferDate: string
+    
     constructor(data: ITransfer) {
         this.TransferNumber = data.transferNumber;
         this.CardNumber = data.cardNumber;

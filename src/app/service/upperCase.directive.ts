@@ -6,22 +6,18 @@ import { FormControl } from '@angular/forms';
 })
 
 export class UpperCaseDirective {
-    // constructor(public ref: ElementRef) { }
 
-    // @HostListener('keyup', ['$event']) onInput(event) {
-    //     this.ref.nativeElement.value = event.target.value.toUpperCase();
-    //  }
     private _control: FormControl;
 
     constructor(private elementRef: ElementRef) {
 
     }
 
-    @HostListener('input', ['$event']) onInputChange(event){
+    @HostListener('input', ['$event']) onInputChange(event) {
         const initalValue = this.elementRef.nativeElement.value;
         this.elementRef.nativeElement.value = initalValue.replace(/[^A-Z\s]*/g, '');
-        if ( initalValue !== this.elementRef.nativeElement.value) {
-          event.stopPropagation();
+        if (initalValue !== this.elementRef.nativeElement.value) {
+            event.stopPropagation();
         }
     }
 
